@@ -7,3 +7,6 @@
 [submodule "packages/contracts/lib/account-abstraction"]
 	path = packages/contracts/lib/account-abstraction
 	url = https://github.com/eth-infinitism/account-abstraction
+[submodule "packages/contracts/lib/solady"]
+	path = packages/contracts/lib/solady
+	url = https://github.com/vectorized/solady
