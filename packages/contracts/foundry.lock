@@ -1,0 +1,17 @@
+{
+  "lib/account-abstraction": {
+    "rev": "1c6b669d0eea734e09a87e095ba15e076151718a"
+  },
+  "lib/forge-std": {
+    "rev": "96abd708f045daa0d40827b27fb06fb3021b2d8c"
+  },
+  "lib/openzeppelin-contracts": {
+    "rev": "ca6f5fab7cf2bf71d6301dc2153abe993cef42f9"
+  },
+  "lib/solady": {
+    "tag": {
+      "name": "v0.1.26",
+      "rev": "acd959aa4bd04720d640bf4e6a5c71037510cc4b"
+    }
+  }
+}
