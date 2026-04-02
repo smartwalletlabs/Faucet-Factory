@@ -45,8 +45,8 @@ contract AccountFactory {
                                FUNCTIONS
     //////////////////////////////////////////////////////////////*/
 
-    function createAccount(address owner, uint256 salt, uint32 entityId) external returns (ModularAccount account) {
-        bytes32 combinedSalt = getSalt(owner, salt, entityId);
+    function createAccount(address owner, uint256 salt) external returns (ModularAccount account) {
+        bytes32 combinedSalt = getSalt(owner, salt);
         (bool isAlreadyDeployed, address instance) = LibClone.createDeterministicERC1967(address(ACCOUNT_IMPL), combinedSalt);
         if (!isAlreadyDeployed) {
             ModularAccount(instance).initialize(owner);
@@ -55,12 +55,12 @@ contract AccountFactory {
         return ModularAccount(instance);
     }
 
-    function getSalt(address owner, uint256 salt, uint32 entityId) public pure returns (bytes32) {
-        return keccak256(abi.encodePacked(owner, salt, entityId));
+    function getSalt(address owner, uint256 salt) public pure returns (bytes32) {
+        return keccak256(abi.encodePacked(owner, salt));
     }
 
-    function getAddress(address owner, uint256 salt,uint32 entityId) view external returns (address account) {
-        bytes32 combinedSalt = getSalt(owner, salt, entityId);
+    function getAddress(address owner, uint256 salt) view external returns (address account) {
+        bytes32 combinedSalt = getSalt(owner, salt);
         account=LibClone.predictDeterministicAddressERC1967(address(ACCOUNT_IMPL), combinedSalt, address(this));
     }
 }

@@ -10,13 +10,9 @@ pragma solidity ^0.8.28;
         address module;
     }
 
-    struct ExecutionStorage {
-        address module;
-    }
 
     struct AccountStorageStruct {
         mapping(bytes21 validationLookupKey => ValidationStorage) validationStorage;
-        mapping(bytes4 selector => ExecutionStorage) executionStorage;
     }
 
     /*//////////////////////////////////////////////////////////////

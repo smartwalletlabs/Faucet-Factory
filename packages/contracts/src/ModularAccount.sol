@@ -35,4 +35,7 @@ contract ModularAccount is ModularAccountBase {
     function initialize(address _owner)  external initializer {
         owner=_owner;
     }
+    function _getOwner() internal view override returns (address) {
+        return owner;
+    }
 }
